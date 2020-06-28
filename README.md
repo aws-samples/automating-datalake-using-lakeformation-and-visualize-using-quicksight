@@ -89,8 +89,10 @@ Create the IAM Role by following below steps:
 ![Image](images/image13.png)
 5.	Back on the Roles page, search for and choose LakeFormationWorkflowRole.
 6.	On the role Summary page, under the Permissions tab, choose Add inline policy, and add the following policy in JSON editor. 
+
 ![Image](images/image14.png)
 
+```
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -105,11 +107,14 @@ Create the IAM Role by following below steps:
         }
     ]
 }
+```
 
 7.	Name the policy DatalakeDataAccess and click on Create Policy
 ![Image](images/image15.png)
 8.	Add another inline policy that allows the role to pass itself by granting the PassRole permission. Name the policy DatalakePassRole.
 Important: In the following policy, replace account-id with your AWS account number. Account ID can be found in Account Summary page.
+
+```
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -123,6 +128,7 @@ Important: In the following policy, replace account-id with your AWS account num
         }
     ]
 }
+```
 9.	Back to policy page, add two more AWS service level permissions: AmazonS3FullAccess and AWSGlueConsoleFullAccess
 10.	On the Summary page, verify that there are five policies attached to the role.
 ![Image](images/image16.png)
@@ -149,14 +155,19 @@ Lake Formation – Add Administrator and start workflows using Blueprints.
 Navigate to the AWS Lake Formation service.
 1.	If you are logging into the lake formation console for the first time then you must add administrators first in order to do that follow Steps 2 and 3. Else skip to Step 4.
 2.	Click Add administrators
+
 ![Image](images/image22.png)
+
 3.	Add your <login user> as the Lake Formation Administrator and Click Save
+ 
 ![Image](images/image23.png)
+
 4.	Navigate to Databases on left pane. Select Glue Database and click on “Actions”, select “Grant” to grant permissions. 
 
 ![Image](images/image24.png)
 
 5.	Under “IAM Users and Roles”, select Lake Formation role that you created – “LakeFormationWorkflowRole” and for user, select your username. Grant “super” permissions for Database permissions and Grantable permissions.
+
 ![Image](images/image25.png)
 
 6.	On the left pane navigate to Blueprints click Use blueprints.
@@ -205,8 +216,10 @@ Explore workflow results in Athena
 3.	Click on “Tables in Database” and this table will be pre fixed by “lakeformation_”
 ![Image](images/image33.png)
 4.	And Click Action -> View Data
+
 ![Image](images/image34.png)
-5.	This will now take you to Athena console, where you can preview the table contents, as show below;
+5.	This will now take you to Athena console, where you can preview the table contents, as show below
+
 ![Image](images/image35.png)
 Grant fine grain access controls to Data Lake user
 

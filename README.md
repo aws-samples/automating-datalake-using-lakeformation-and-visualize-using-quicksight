@@ -15,14 +15,19 @@ From the above diagram, the glue crawler and jobs are automated using Lakeformat
 **Steps to Execute**
 
 Create a RDS database and Load some sample data.
-Check for connectivity for RDS
-Create a JDBC connection to RDS in AWS Glue
-Lake Formation IAM Role
-NOTE: If your account is already setup with Glue Data catalog permissions then upgrade to Lake Formation Permission set by following -Link
-Lake Formation – Add Administrator and start workflows using Blueprints 
-Explore the components of a Glue WorkFlow created by lake formation
-Explore workflow results in Athena
-Grant fine grain access controls to Data Lake user
+
+Check for connectivity for RDS.
+
+Create a JDBC connection to RDS in AWS Glue.
+
+Lake Formation IAM Role.
+
+Explore the components of a Glue WorkFlow created by lake formation.
+
+Explore workflow results in Athena.
+
+Grant fine grain access controls to Data Lake user.
+
 Verify data permissions using Athena
 
 Create a RDS database and Load some sample data

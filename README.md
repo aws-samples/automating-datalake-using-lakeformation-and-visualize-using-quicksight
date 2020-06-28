@@ -24,10 +24,12 @@ Explore workflow results in Athena
 Grant fine grain access controls to Data Lake user
 Verify data permissions using Athena
 
-
 Create a RDS database and Load some sample data
+
 ![Image](images/image1.png)
+
 ![Image](images/image2.png)
+
 Navigate to the AWS Glue service.
 Setup Network Configuration
 To begin with, we need to perform network configuration. We will open ports specific to RDS PostgreSQL DB, define inbound rules and create S3 endpoint to access data in S3 bucket 

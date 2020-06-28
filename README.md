@@ -48,7 +48,9 @@ Note: Make sure your RDS instance is available. If the Status says “Storage Fu
 a.	All TCP with self-reference of security group as its own source.
 b.	PostgreSQL on 5432 from 0.0.0.0/0
 c.	Click on Save Rules
+
 ![Image](images/image5.png)
+
 4.	Create S3 VPC endpoint. Navigate to VPC Dashboard and select Endpoint from left section. Click on “Create Endpoint”.
 
 ![Image](images/image6.png)

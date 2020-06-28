@@ -37,8 +37,11 @@ To begin with, we need to perform network configuration. We will open ports spec
 1.	Navigate to RDS dashboard and click on the instance. Select “Connectivity and Security” and look for security group. Click on the security group and and you will be navigated to VPC Dashboard. 
 
 Note: Make sure your RDS instance is available. If the Status says “Storage Full”, increase the DB storage capacity and apply changes immediately to the DB instance and proceed further.
+
 ![Image](images/image3.png)
+
 2.	Security group associated with RDS instance will be automatically selected. Select Inbound Rules and Click Edit Rules.
+
 ![Image](images/image4.png)
 
 3.	Create Inbound Rules as shown below:

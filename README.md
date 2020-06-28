@@ -184,6 +184,7 @@ a.	For Blueprint Type, select Database snapshot
 b.	Under Import Source
 i.	For Database Connection choose the DB connection created in the glue. [Ex: “glue-rds-connection”]
 ii.	For Source Data Path enter RDS database in database/schema/table format.
+
 ![Image](images/image27.png)
 
 c.	Under Import Target
@@ -192,17 +193,22 @@ ii.	For Target storage location choose the S3 bucket - For Bucket name, type the
 iii.	Add a folder at the end of the bucket url path.
 NOTE: The value is similar to the following string, <StackName>-s3bucketname
 iv.	For Data Format choose Parquet
+ 
 ![Image](images/image28.png)
 d.	For Import Frequency, Select Run On Demand
 e.	For Import Options;
 i.	Give a suitable Workflow Name
 ii.	For the IAM role choose the LakeFormationWorkflowRole created previously
 iii.	For Table prefix type “lakeformation_”
+ 
 ![Image](images/image29.png)
 7.	Leave other options as default, Choose Create, and wait for the console to report that the workflow was successfully created. 
 8.	Once the blueprint gets created, click on Start it Now? 
+
 [There may be a delay of 5-10s delay in the blueprint showing up. You may have to hit refresh. Select the blueprint and choose Start in Actions drop down]
+
 9.	Once the workflow starts executing, you will see the status changes from running  discovering  
+
 ![Image](images/image30.png)
 Explore the Underlying Components of a Blueprint
  
@@ -210,6 +216,7 @@ The Lake Formation blueprint creates a Glue Workflow under the hood which contai
 
 1.	On the Lake Formation console, in the navigation pane, choose Blueprints
 2.	In the Workflow section, click on the Workflow name. This will direct you to the Workflow run page. Click on the Run Id. 
+
 ![Image](images/image31.png)
 
 3.	On the Glue Console page, click on Get Started and head to ETL Workflows in the navigation pane.
@@ -222,6 +229,7 @@ Explore workflow results in Athena
 1.	Navigate to the Glue console
 2.	Navigate to Databases on the left panel and select Target Database created in LakeFormation Console.
 3.	Click on “Tables in Database” and this table will be pre fixed by “lakeformation_”
+
 ![Image](images/image33.png)
 4.	And Click Action -> View Data
 
@@ -233,8 +241,10 @@ Grant fine grain access controls to Data Lake user
 
 Before we start the querying the data, let us create an IAM User datalake_user and grant column level access on the table created by the Lake formation workflow above, to datalake_user. 
 1.	Login as admin user to your account. Navigate to IAM Console and click on Add User. 
+
 ![Image](images/image36.png)
 2.	Create a user named datalake_user and give it a password: master123. 
+
 ![Image](images/image37.png)
 
 3.	Next click on Permissions and keep navigating to the next steps until reached the end. Review the details and click on “Create User”.
@@ -256,6 +266,7 @@ f.	For Table permissions, choose Select.
 6.	Choose Grant. 
 
 ![Image](images/image41.png)
+
 Verify data permissions using Athena
 Using Athena, let us now explore the data set as the datalake_user. 
 1.	Sign in to AWS account with account ID and username as the datalake_user user – datalake_user (username: datalake_user)
@@ -270,15 +281,20 @@ Using Athena, let us now explore the data set as the datalake_user.
 Viewing data in QUICKSIGHT
 Open Quicksight in AWS console
 Click on NewAnalysis on QuickSight
+
 ![Image](images/image43.png)
 Click on NewDataSet and on Athena
+
 ![Image](images/image44.png)
 On this enter Data Source  Name and click on Create Data Source
 Then select the Database and table 
+
 ![Image](images/image45.png)
 You can load data into spice or select direct query option and click on Visualize
+
 ![Image](images/image46.png)
 Final data after selecting chart and data
+
 ![Image](images/image47.png)
 
 

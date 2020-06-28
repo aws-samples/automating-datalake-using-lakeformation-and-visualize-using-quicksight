@@ -10,7 +10,7 @@ This guide allows to build a data lake and automation data ingestion from databa
 ![Image](images/imagemain1.png)
 ![Image](images/imagemain2.png)
 
-From the above diagram, the glue crawler and jobs are autmated using Lakeformation and data is ungested to s3. And then it can be further anakyzed using Athena andVisuaized using Quicksight.
+From the above diagram, the glue crawler and jobs are automated using Lakeformation and data is ingested to s3. And then it can be further analyzed using Athena and Visualized using Quicksight.
  
 **Steps to Execute**
 

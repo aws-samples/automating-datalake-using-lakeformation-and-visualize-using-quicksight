@@ -12,7 +12,7 @@ This guide allows to build a data lake and automation data ingestion from databa
 
 From the above diagram, the glue crawler and jobs are automated using Lakeformation and data is ingested to s3. And then it can be further analyzed using Athena and Visualized using Quicksight.
  
-**Steps to Execute**
+**Main Steps**
 
 Create a RDS database and Load some sample data.
 
@@ -29,6 +29,8 @@ Explore workflow results in Athena.
 Grant fine grain access controls to Data Lake user.
 
 Verify data permissions using Athena
+
+**Steps to Execute**
 
 Create a RDS database and Load some sample data
 

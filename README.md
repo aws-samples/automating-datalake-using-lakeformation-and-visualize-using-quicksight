@@ -87,9 +87,7 @@ f.	Click on Create Endpoint
 ![Image](images/image9.png)
 
 Endpoint creation is successful.
-Create an IAM role to use with Lake Formation:
-Documentation Reference: Link
-Create the IAM Role by following below steps:
+Create an IAM role to use with Lake Formation. Create the IAM Role by following below steps:
 
 1.	On the IAM console, In the navigation pane, choose Roles, and then choose Create role.
 
@@ -146,6 +144,7 @@ Important: In the following policy, replace account-id with your AWS account num
 ```
 9.	Back to policy page, add two more AWS service level permissions: AmazonS3FullAccess and AWSGlueConsoleFullAccess
 10.	On the Summary page, verify that there are five policies attached to the role.
+
 ![Image](images/image16.png)
 Create Glue JDBC connection for RDS 
 

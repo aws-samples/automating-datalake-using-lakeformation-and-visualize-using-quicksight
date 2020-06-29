@@ -21,21 +21,21 @@ Glue crawler and jobs are automatically created when using Lakeformation blue pr
  
 **Main Steps**
 
-Create a RDS database and Load some sample data.
+1. Create a RDS database and Load some sample data.
 
-Check for connectivity for RDS.
+2. Check for connectivity for RDS.
 
-Create a JDBC connection to RDS in AWS Glue.
+3. Create a JDBC connection to RDS in AWS Glue.
 
-Lake Formation IAM Role.
+4. Lake Formation IAM Role.
 
-Explore the components of a Glue WorkFlow created by lake formation.
+5. Explore the components of a Glue WorkFlow created by lake formation.
 
-Explore workflow results in Athena.
+6. Explore workflow results in Athena.
 
-Grant fine grain access controls to Data Lake user.
+7. Grant fine grain access controls to Data Lake user.
 
-Verify data permissions using Athena
+8. Verify data permissions using Athena
 
 **Steps to Execute**
 
@@ -165,6 +165,7 @@ Create Glue JDBC connection for RDS
 ![Image](images/image20.png)
 8.	To Test connection, choose the IAM role created in the previous step and then click on Test Connection.
 ![Image](images/image21.png)
+
 Lake Formation – Add Administrator and start workflows using Blueprints. 
 Navigate to the AWS Lake Formation service.
 1.	If you are logging into the lake formation console for the first time then you must add administrators first in order to do that follow Steps 2 and 3. Else skip to Step 4.
@@ -186,6 +187,7 @@ Navigate to the AWS Lake Formation service.
 
 6.	On the left pane navigate to Blueprints click Use blueprints.
 ![Image](images/image26.png)
+
 a.	For Blueprint Type, select Database snapshot
 b.	Under Import Source
 i.	For Database Connection choose the DB connection created in the glue. [Ex: “glue-rds-connection”]
@@ -197,10 +199,10 @@ c.	Under Import Target
 i.	For Target Database, choose existing Glue database created earlier.
 ii.	For Target storage location choose the S3 bucket - For Bucket name, type the name of the s3 bucket that you created earlier in student lab. 
 iii.	Add a folder at the end of the bucket url path.
-NOTE: The value is similar to the following string, <StackName>-s3bucketname
 iv.	For Data Format choose Parquet
  
 ![Image](images/image28.png)
+
 d.	For Import Frequency, Select Run On Demand
 e.	For Import Options;
 i.	Give a suitable Workflow Name
@@ -208,6 +210,7 @@ ii.	For the IAM role choose the LakeFormationWorkflowRole created previously
 iii.	For Table prefix type “lakeformation_”
  
 ![Image](images/image29.png)
+
 7.	Leave other options as default, Choose Create, and wait for the console to report that the workflow was successfully created. 
 8.	Once the blueprint gets created, click on Start it Now? 
 
@@ -216,6 +219,7 @@ iii.	For Table prefix type “lakeformation_”
 9.	Once the workflow starts executing, you will see the status changes from running  discovering  
 
 ![Image](images/image30.png)
+
 Explore the Underlying Components of a Blueprint
  
 The Lake Formation blueprint creates a Glue Workflow under the hood which contains Glue ETL jobs – both python shell and pyspark; Glue crawlers and triggers. It will take somewhere between 15-20 mins to finish execution. In the meantime, let us drill down to see what it creates for us;
@@ -231,24 +235,29 @@ The Lake Formation blueprint creates a Glue Workflow under the hood which contai
 10.	Every job comes with history, details, script and metrics tab. Review each of these tabs for any of the python shell or pyspark jobs.
 
 ![Image](images/image32.png)
+
 Explore workflow results in Athena
 1.	Navigate to the Glue console
 2.	Navigate to Databases on the left panel and select Target Database created in LakeFormation Console.
 3.	Click on “Tables in Database” and this table will be pre fixed by “lakeformation_”
 
 ![Image](images/image33.png)
+
 4.	And Click Action -> View Data
 
 ![Image](images/image34.png)
+
 5.	This will now take you to Athena console, where you can preview the table contents, as show below
 
 ![Image](images/image35.png)
+
 Grant fine grain access controls to Data Lake user
 
 Before we start the querying the data, let us create an IAM User datalake_user and grant column level access on the table created by the Lake formation workflow above, to datalake_user. 
 1.	Login as admin user to your account. Navigate to IAM Console and click on Add User. 
 
 ![Image](images/image36.png)
+
 2.	Create a user named datalake_user and give it a password: master123. 
 
 ![Image](images/image37.png)
@@ -292,13 +301,16 @@ Click on NewAnalysis on QuickSight
 Click on NewDataSet and on Athena
 
 ![Image](images/image44.png)
+
 On this enter Data Source  Name and click on Create Data Source
 Then select the Database and table 
 
 ![Image](images/image45.png)
+
 You can load data into spice or select direct query option and click on Visualize
 
 ![Image](images/image46.png)
+
 Final data after selecting chart and data
 
 ![Image](images/image47.png)

@@ -3,9 +3,11 @@
 **Background**
 
 
-Most of the enterprises have data on the traditional on premise systems. This could be CRM, ERP, Database systems etc. A data lake is a centralized repository that allows you to store all your structured and unstructured data at any scale. AWS provides the most comprehensive, secure, and cost-effective portfolio of services that enable customers to easily build their data lake in the cloud and analyze all their data with the broadest set of analytical approaches, including machine learning. S3, functions as the Datalake due to its Durability, availability, high performance, easy to use, scalability. 
-Introduction
-This guide allows to build a data lake and automation data ingestion from database layer into s3. Lakeformation is used to automate the data ingestion. Once the data is ingested into s3, it can be analyzed using Athena and further visualized using Quick sight.
+Most of the enterprises have data resinding on the  on premise systems. This data coud span across various CRM, ERP, Database systems. A data lake is a centralized repository that allows you to store all your structured and unstructured data at any scale from these systems. AWS provides the most comprehensive, secure, and cost-effective portfolio of services that enable customers to easily build their data lake in the cloud and analyze all their data with the broadest set of analytical approaches, including machine learning. S3, functions as the Datalake due to its Durability, Availability, High Performance, Easy to Use and scalability. 
+
+**Introduction**
+
+This guide allows to build a Data lake and automation data ingestion from database layer into s3. Lakeformation is used to automate the data ingestion. Once the data is ingested into s3, it can be analyzed using Athena and further visualized using Quick sight.
 
 **Architecture**
  

@@ -12,9 +12,12 @@ This guide allows to build a Data lake and automation data ingestion from databa
 **Architecture**
  
 ![Image](images/imagemain1.png)
+
+The above architecture diagram ingests data from s3 or an RDS database and using glue jobs the data is brought into data lake. And then it can be further analyzed using Athena and Visualized using Quicksight.
+
 ![Image](images/imagemain2.png)
 
-From the above diagram, the glue crawler and jobs are automated using Lakeformation and data is ingested to s3. And then it can be further analyzed using Athena and Visualized using Quicksight.
+Glue crawler and jobs are automatically created when using Lakeformation blue prints and configuration parameters are needed to ingest data into s3. 
  
 **Main Steps**
 

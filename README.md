@@ -7,17 +7,17 @@ Most of the enterprises have data resinding on the  on premise systems. This dat
 
 **Introduction**
 
-This guide allows to build a Data lake and automation data ingestion from database layer into s3. Lakeformation is used to automate the data ingestion. Once the data is ingested into s3, it can be analyzed using Athena and further visualized using Quick sight.
+This guide allows to build a Data lake and automate data ingestion from database layer into s3. Lakeformation is used to automate the data ingestion. Once the data is ingested into s3, it can be analyzed using Athena and further visualized using Quick sight.
 
 **Architecture**
  
 ![Image](images/imagemain1.png)
 
-The above architecture diagram ingests data from s3 or an RDS database and using glue jobs the data is brought into data lake. And then it can be further analyzed using Athena and Visualized using Quicksight.
+The above architecture diagram ingests data from s3 or an RDS database. Using glue jobs, the data is brought into data lake. The data can be further analyzed using Athena and Visualized using Quicksight.
 
 ![Image](images/imagemain2.png)
 
-Glue crawler and jobs are automatically created when using Lakeformation blue prints and configuration parameters are needed to ingest data into s3. 
+Glue crawler and jobs are automatically created when using Lakeformation blue prints. Configuration parameters are needed to ingest data into s3. 
  
 **Main Steps**
 

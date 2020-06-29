@@ -146,8 +146,8 @@ Important: In the following policy, replace account-id with your AWS account num
 10.	On the Summary page, verify that there are five policies attached to the role.
 
 ![Image](images/image16.png)
-Create Glue JDBC connection for RDS 
 
+Create Glue JDBC connection for RDS 
 1.	On the AWS Glue menu, select Connections.
 
 ![Image](images/image17.png)
